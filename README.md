@@ -1,2 +1,2 @@
-# path-to-sucesss
-GIT 337: First assignment
+# Path to Success
+First assignment in GIT 337

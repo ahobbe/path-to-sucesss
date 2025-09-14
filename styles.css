@@ -1,0 +1,327 @@
+/* CSS BY ANNA HOBBS */
+	/* Nothing in the rubric says I can't indent my CSS however I want, so I am */
+
+/* IMPORTED FONTS */
+	@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kavoon&display=swap");
+
+/* CSS RESET */
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+		v2.0 | 20110126
+		License: none (public domain)
+	*/
+	/* I know there are more modern resets, but we used this in 215 so... 🤷 */
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	ol, ul {
+		list-style: none;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: "";
+		content: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+/* ROOT VARIABLES */
+	:root {
+		/* COLORS */
+		--teal: #4CA7C0;
+		--purple: #484FB7;
+		--lavender: #6B8FE7;
+		--yellow: #E9BB57;
+		--pink: #D9526F; /* I might be having a color blind moment, but I feel like this is red */
+		--dark-gray: #1E1E1E;
+		--white: #FFFFFF;
+		--black: #000000; /* The others were in the Google Doc, I added this one */
+
+		/* FONTS */
+		--kavoon: Kavoon, "Brush Script MT", cursive; /* I did NOT choose this font */
+		--inter: Inter, Arial, Helvetica, sans-serif;
+	}
+
+/* GLOBAL STYLES (mobile first/small) */
+	/* FROM THE GOOGLE DOC */
+		/* FONT FAMILIES */
+			h1,
+			h2 {
+				font-family: var(--kavoon);
+			}
+
+			body {
+				font-family: var(--inter);
+			}
+
+		/* FONT SIZES */
+			h1 {
+				font-size: 3em;
+			}
+
+			h2 {
+				font-size: 2em;
+			}
+
+			nav h2,
+			h3 {
+				font-size: 1.5em;
+			}
+
+			h4 {
+				font-size: 1.15em;
+			}
+
+	/* Intentionally not using classes or IDs to follow the rubric */
+	/* All values are eyeballed, sorry it's janky */
+
+	/* GENERAL */
+		html {
+			background-color: var(--lavender);
+		}
+
+		body {
+			max-width: 450px;
+			margin: 0 auto;
+
+			line-height: 1.5;
+
+			color: var(--white);
+			background-color: var(--purple);
+		}
+
+		h2:not(nav h2) {
+			margin: -0.5rem 0 0;
+		}
+
+		h3 {
+			font-weight: bold;
+			color: var(--yellow);
+		}
+
+	/* HEADER */
+		header {
+			text-align: center;
+
+			& h1 {
+				padding-top: 2rem;
+			}
+
+			& p {
+				padding: 0.5rem 0 2.5rem;
+
+				font-style: italic;
+			}
+
+			& nav {
+				padding: 0.75rem 0;
+
+				color: var(--black);
+				background-color: var(--yellow);
+
+				& h2 {
+					font-family: var(--inter);
+					font-weight: bold;
+					font-style: italic;
+					text-transform: uppercase;
+				}
+
+				& ul li {
+					padding: 1rem 0;
+					margin: 0.75rem 1.5rem;
+
+					background-color: var(--white);
+
+					& a {
+						font-weight: bold;
+						text-transform: uppercase;
+						text-decoration: none;
+
+						color: var(--purple);
+
+						/* For fun */
+						&:hover,
+						&:focus {
+							text-decoration: underline;
+							color: var(--lavender);
+						}
+					}
+				}
+			}
+		}
+
+	/* SECTIONS */
+		/* H2 level */
+		main > section {
+			padding: 1rem;
+
+			/* H3 level */
+			& section {
+
+				/* H4 level */
+				& article {
+					margin: 1rem 0.5rem;
+					padding: 1.5rem;
+
+					border-radius: 1rem;
+
+					color: var(--black);
+					background-color: var(--white);
+
+					& h4 {
+						padding: 0.5rem 0;
+						font-weight: bold;
+						color: var(--purple);
+					}
+				}
+			}
+
+			/* Why Choose Us */
+			&:nth-child(2) {
+				background-color: var(--pink);
+
+				& ul {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					gap: 1rem;
+
+					padding-top: 0.5rem;
+
+					/* I could vertically center the text nicely with grid, but the example did not so it is what it is */
+					& li {
+						padding: 2rem;
+						
+						border-radius: 1rem;
+
+						font-weight: bold;
+						text-align: center;
+
+						color: var(--black);
+
+						/* Personalized Approach */
+						&:nth-child(1) {
+							background-color: var(--teal);
+						}
+
+						/* Proven Results */
+						&:nth-child(2) {
+							background-color: var(--lavender);
+						}
+
+						/* Supportive Environment */
+						&:nth-child(3) {
+							background-color: var(--yellow);
+						}
+
+						/* Flexible Options */
+						&:nth-child(4) {
+							background-color: var(--white);
+						}
+					}
+				}
+			}
+
+			/* Take the First STep Today */
+			&:nth-child(4) {
+				background-color: var(--pink);
+
+				& button {
+					display: block;
+					width: 90%;
+
+					margin: 0.5rem auto -0.5rem; /* Personally would give this more breathing room, but I am matching the mockup */
+					padding: 1.5rem 0;
+
+					border-radius: 1rem;
+					border: none;
+
+					font-weight: bold;
+					text-transform: uppercase;
+
+					background-color: var(--white);
+					box-shadow: 0.25rem 0.25rem 0.25rem var(--black);
+				}
+			}
+		}
+
+	/* TABLES */
+		table {
+			margin: 0.25rem auto; /* I think 1rem auto (or even 0.5rem) looks way nicer, but the mockup has them really tight */
+
+			color: var(--black);
+
+			& thead {
+				font-weight: bold;
+				text-transform: uppercase;
+
+				background-color: var(--yellow);
+			}
+
+			& tbody {
+				background-color: var(--white);
+				border: var(--yellow) solid 1px;
+			}
+
+			& th,
+			& td {
+				padding: 1rem;
+				border: 0.125rem var(--yellow) solid;
+			}
+		}
+
+	/* FOOTER */
+		footer {
+			display: flex;
+			justify-content: space-evenly;
+
+			padding: 3rem 0;
+
+			& a {
+				color: var(--white);
+
+				&:hover,
+				&:focus {
+					color: var(--pink);
+				}
+			}
+
+			& p {
+				font-size: 0.875rem; /* This looks slightly smaller to me than the rest of the p's, but idk */
+			}
+		}
